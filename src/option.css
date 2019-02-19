@@ -6,7 +6,7 @@
   @b select-dropdown {
     @e item {
       font-size: var(--select-font-size);
-      padding: 8px 10px;
+      padding: 3px 7px 4px;
       position: relative;
       white-space: nowrap;
       overflow: hidden;
@@ -15,14 +15,14 @@
       height: var(--select-option-height);
       line-height: 1.5;
       box-sizing: border-box;
-      cursor: pointer;
+      cursor: default;
 
       @when disabled {
         color: var(--select-option-disabled-color);
         cursor: not-allowed;
 
         &:hover {
-          background-color: var(--color-white);
+          background-color: var(--color-dark-light);
         }
       }
 

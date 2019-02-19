@@ -6,7 +6,7 @@
   @b radio {
     color: var(--radio-color);
     position: relative;
-    cursor: pointer;
+    cursor: default;
     display: inline-block;
     white-space: nowrap;
     @utils-user-select none;
@@ -17,7 +17,7 @@
 
     @e input {
       white-space: nowrap;
-      cursor: pointer;
+      cursor: default;
       outline: none;
       display: inline-block;
       line-height: 1;
@@ -29,6 +29,12 @@
           background-color: var(--radio-disabled-input-fill);
           border-color: var(--radio-disabled-input-border-color);
           cursor: not-allowed;
+
+          &:hover {
+            &::after {
+              transform: translate(-50%, -50%) scale(0);
+            }
+          }
 
           &::after {
             cursor: not-allowed;
@@ -46,6 +52,7 @@
 
             &::after {
               background-color: var(--radio-disabled-checked-icon-color);
+              transform: translate(-50%, -50%) scale(1);
             }
           }
         }
@@ -58,7 +65,12 @@
       @when checked {
         .el-radio__inner {
           border-color: var(--radio-checked-input-border-color);
-          background: var(--radio-checked-icon-color);
+          /* background: var(--radio-checked-icon-color); */
+          &:hover {
+            &::after {
+              opacity: 1;
+            }
+          }
 
           &::after {
             transform: translate(-50%, -50%) scale(1);
@@ -77,12 +89,17 @@
       border-radius: var(--radio-input-border-radius);
       circle: var(--radio-input-width) var(--radio-input-fill);
       position: relative;
-      cursor: pointer;
+      cursor: default;
       display: inline-block;
       box-sizing: border-box;
 
       &:hover {
         border-color: var(--radio-input-border-color-hover);
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0.6;
+        }
       }
 
       &::after {

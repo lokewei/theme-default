@@ -12,6 +12,13 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('./lib'));
 });
 
+gulp.task('vars', function() {
+  return gulp.src('./src/*.css')
+    .pipe(postcss([salad]))
+    // .pipe(cssmin())
+    .pipe(gulp.dest('./lib'));
+});
+
 gulp.task('copyfont', function() {
   return gulp.src('./src/fonts/**')
     .pipe(cssmin())
@@ -19,3 +26,7 @@ gulp.task('copyfont', function() {
 });
 
 gulp.task('build', ['compile', 'copyfont']);
+
+gulp.task('default',function(){
+  gulp.watch('./src/**/*.css',['build']);
+});

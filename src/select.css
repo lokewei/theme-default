@@ -15,16 +15,24 @@
 
     &:hover {
       .el-input__inner {
+        color: #ebebeb;
         border-color: var(--select-border-color-hover);
+        background-color: var(--color-hover-fill);
       }
     }
 
     & .el-input__inner {
-      cursor: pointer;
       padding-right: 35px;
+      cursor: default;
+      border-color: var(--select-border-color-hover);
+      background-color: var(--select-fill);
 
       &:focus {
         border-color: var(--select-input-focus-background);
+      }
+
+      &::placeholder {
+        color: var(--color-base-black);
       }
     }
 
@@ -36,7 +44,6 @@
         transform: translateY(-50%) rotateZ(180deg);
         line-height: 16px;
         top: 50%;
-        cursor: pointer;
 
         @when reverse {
           transform: translateY(-50%);
@@ -63,7 +70,7 @@
           cursor: not-allowed;
 
           &:hover {
-            border-color: var(--select-disabled-border);
+            /* border-color: var(--select-disabled-border); */
           }
         }
       }

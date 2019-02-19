@@ -11,13 +11,7 @@
 
   /* Colors
   -------------------------- */
-  --color-dark: #2b2b2b;
-  --color-dark-light: #5e5e5e; /* 5e5e5e */
-  --color-dark-extra-light: #232323; /* 232323 */
-
   --color-primary: #20a0ff;
-  --color-primary-hover: #3b79c3;
-  --color-hover-fill: #6b6b6b;
 
   --color-success: #13ce66;
   --color-warning: #f7ba2a;
@@ -29,17 +23,17 @@
   --color-dark-white: color(var(--color-white) blend(var(--color-primary) 2%));
   --color-black: #000;
 
-  --color-base-black: #d9d9d9;
+  --color-base-black: color(var(--color-primary) h(+6) s(33%) l(18%));
   --color-light-black: color(var(--color-base-black) h(+5) s(27%) l(27%));
-  --color-extra-light-black: rgba(255, 255, 255, 0.9);
+  --color-extra-light-black: color(var(--color-base-black) h(+2) s(19%) l(35%));
 
   --color-base-silver: color(var(--color-base-black) h(+3) s(16%) l(58%));
-  --color-light-silver: #737373;
-  --color-extra-light-silver: #bfcbd9;
+  --color-light-silver: color(var(--color-base-black) h(+3) s(23%) l(67%));
+  --color-extra-light-silver: color(var(--color-base-black) s(26%) l(80%));
 
-  --color-base-gray: #303030;
+  --color-base-gray: color(var(--color-base-black) s(28%) l(86%));
   --color-light-gray: color(var(--color-base-black) h(+10) s(33%) l(92%));
-  --color-extra-light-gray: #333333;
+  --color-extra-light-gray: color(var(--color-base-black) h(+6) s(33%) l(95%));
 
   /* Link
   -------------------------- */
@@ -50,11 +44,10 @@
   -------------------------- */
   --border-width-base: 1px;
   --border-style-base: solid;
-  --border-color-base: #212121;
-  --border-color-light: #333333;
-  --border-color-hover: var(--border-color-light);
+  --border-color-base: var(--color-extra-light-silver);
+  --border-color-hover: var(--color-base-silver);
   --border-base: var(--border-width-base) var(--border-style-base) var(--border-color-base);
-  --border-radius-base: 2px;
+  --border-radius-base: 4px;
   --border-radius-small: 2px;
   --border-radius-circle: 100%;
 
@@ -69,13 +62,13 @@
 
   /* Font
   -------------------------- */
-  --font-size-base: 12px;
+  --font-size-base: 14px;
   --font-color-base: var(--color-base-black);
-  --font-color-disabled-base: #929292;
+  --font-color-disabled-base: #bbb;
 
   /* Size
   -------------------------- */
-  --size-base: 12px;
+  --size-base: 14px;
 
   /* z-index
   -------------------------- */
@@ -86,7 +79,7 @@
   /* Disable base
   -------------------------- */
   --disabled-fill-base: var(--color-extra-light-gray);
-  --disabled-color-base: #7d7d7d;
+  --disabled-color-base: #bbb;
   --disabled-border-base: var(--color-base-gray);
 
   /* Icon
@@ -95,13 +88,12 @@
 
   /* Checkbox
   -------------------------- */
-  --checkbox-font-size: 12px;
+  --checkbox-font-size: 14px;
   --checkbox-color: var(--color-base-black);
-  --checkbox-input-height: 12px;
-  --checkbox-input-width: 12px;
+  --checkbox-input-height: 18px;
+  --checkbox-input-width: 18px;
   --checkbox-input-border-radius: var(--border-radius-base);
-  --checkbox-input-fill: var(--color-dark);
-  --checkbox-input-fill-hover: var(--color-dark-extra-light);
+  --checkbox-input-fill: var(--color-white);
   --checkbox-input-border: var(--border-base);
   --checkbox-input-border-color: var(--border-color-base);
   --checkbox-icon-color: var(--color-white);
@@ -114,28 +106,27 @@
   --checkbox-disabled-checked-input-border-color: var(--disabled-border-base);
   --checkbox-disabled-checked-icon-color: var(--color-white);
 
-  --checkbox-checked-input-border-color: var(--border-color-base);
-  --checkbox-checked-input-fill: var(--color-dark);
+  --checkbox-checked-input-border-color: var(--color-secondary);
+  --checkbox-checked-input-fill: var(--color-primary);
   --checkbox-checked-icon-color: var(--fill-base);
 
-  --checkbox-input-border-color-hover: var(--border-color-base);
+  --checkbox-input-border-color-hover: var(--color-primary);
 
-  --checkbox-button-border: var(--border-width-base) var(--border-style-base) var(--color-extra-light-gray);
   --checkbox-button-font-size: var(--font-size-base);
-  --checkbox-button-checked-fill: var(--color-dark);
-  --checkbox-button-checked-color: var(--button-default-color);
-  --checkbox-button-checked-border-color: var(--border-color-base);
+  --checkbox-button-checked-fill: var(--color-primary);
+  --checkbox-button-checked-color: var(--color-white);
+  --checkbox-button-checked-border-color: var(--color-primary);
 
 
 
   /* Radio
   -------------------------- */
-  --radio-font-size: 12px;
+  --radio-font-size: 14px;
   --radio-color: var(--color-base-black);
-  --radio-input-height: 14px;
-  --radio-input-width: 14px;
+  --radio-input-height: 18px;
+  --radio-input-width: 18px;
   --radio-input-border-radius: var(--border-radius-circle);
-  --radio-input-fill: var(--color-dark);
+  --radio-input-fill: var(--color-white);
   --radio-input-border: var(--border-base);
   --radio-input-border-color: var(--border-color-base);
   --radio-icon-color: var(--color-white);
@@ -146,24 +137,23 @@
 
   --radio-disabled-checked-input-fill: var(--disabled-border-base);
   --radio-disabled-checked-input-border-color: var(--disabled-border-base);
-  --radio-disabled-checked-icon-color: var(--disabled-color-base);
+  --radio-disabled-checked-icon-color: var(--color-white);
 
-  --radio-checked-input-border-color: var(--border-color-base);
+  --radio-checked-input-border-color: var(--color-primary);
   --radio-checked-input-fill: var(--color-white);
   --radio-checked-icon-color: var(--color-primary);
 
-  --radio-input-border-color-hover: var(--border-color-base);
+  --radio-input-border-color-hover: var(--color-primary);
 
   --radio-button-font-size: var(--font-size-base);
-  --radio-button-checked-fill: var(--color-dark);
+  --radio-button-checked-fill: var(--color-primary);
   --radio-button-checked-color: var(--color-white);
-  --radio-button-checked-border-color: var(--border-color-base);
+  --radio-button-checked-border-color: var(--color-primary);
 
   /* Select
   -------------------------- */
-  --select-fill: var(--color-dark-light);
   --select-border-color-hover: var(--border-color-hover);
-  --select-disabled-border: var(--color-base-black);
+  --select-disabled-border: var(--disabled-border-base);
   --select-font-size: var(--font-size-base);
   --select-close-hover-color: var(--color-light-silver);
 
@@ -179,8 +169,8 @@
   --select-option-color: var(--link-color);
   --select-option-disabled-color: var(--color-extra-light-silver);
   --select-option-disabled-background: var(--color-white);
-  --select-option-height: auto;
-  --select-option-hover-background: var(--color-primary-hover);
+  --select-option-height: 36px;
+  --select-option-hover-background: var(--color-light-gray);
   --select-option-selected: var(--color-primary);
   --select-option-selected-hover: shade(var(--color-primary), 0.12);
 
@@ -188,13 +178,13 @@
   --select-group-height: 30px;
   --select-group-font-size: 12px;
 
-  --select-dropdown-background: var(--color-dark-light);
+  --select-dropdown-background: var(--color-white);
   --select-dropdown-shadow: var(--box-shadow-base);
   --select-dropdown-empty-color: #999;
   --select-dropdown-max-height: 274px;
-  --select-dropdown-padding: 0;
+  --select-dropdown-padding: 6px 0;
   --select-dropdown-empty-padding: 10px 0;
-  --select-dropdown-border: solid 1px var(--border-color-light);
+  --select-dropdown-border: solid 1px var(--disabled-border-base);
 
   /* Alert
   -------------------------- */
@@ -265,36 +255,36 @@
   --input-font-size: var(--font-size-base);
   --input-color: var(--font-color-base);
   --input-width: 140px;
-  --input-height: 24px;
+  --input-height: 36px;
   --input-border: var(--border-base);
   --input-border-color: var(--border-color-base);
   --input-border-radius: var(--border-radius-base);
-  --input-border-color-hover: var(--border-color-base);
-  --input-fill: var(--color-dark);
+  --input-border-color-hover: var(--border-color-hover);
+  --input-fill: var(--color-white);
   --input-fill-disabled: var(--disabled-fill-base);
   --input-color-disabled: var(--font-color-disabled-base);
   --input-icon-color: var(--color-extra-light-silver);
   --input-placeholder-color: var(--color-light-silver);
   --input-max-width: 314px;
 
-  --input-hover-border: var(--border-color-base);
+  --input-hover-border: var(--border-color-hover);
 
   --input-focus-border: var(--color-primary);
-  --input-focus-fill: var(--color-dark-extra-light);
+  --input-focus-fill: var(--color-white);
 
-  --input-disabled-fill: var(--color-dark);
-  --input-disabled-border: var(--border-color-base);
-  --input-disabled-color: var(--font-color-base);
+  --input-disabled-fill: var(--disabled-fill-base);
+  --input-disabled-border: var(--disabled-border-base);
+  --input-disabled-color: var(--disabled-color-base);
   --input-disabled-placeholder-color: var(--color-extra-light-silver);
 
-  --input-large-font-size: 13px;
-  --input-large-height: 30px;
+  --input-large-font-size: 16px;
+  --input-large-height: 42px;
 
-  --input-small-font-size: 12px;
-  --input-small-height: 22px;
+  --input-small-font-size: 13px;
+  --input-small-height: 30px;
 
   --input-mini-font-size: 12px;
-  --input-mini-height: 18px;
+  --input-mini-height: 22px;
 
   /* Cascader
   -------------------------- */
@@ -341,34 +331,34 @@
 
   /* Button
   -------------------------- */
-  --button-font-size: 12px;
+  --button-font-size: 14px;
   --button-border-radius: var(--border-radius-base);
-  --button-padding-vertical: 5px;
-  --button-padding-horizontal: 10px;
+  --button-padding-vertical: 10px;
+  --button-padding-horizontal: 15px;
 
-  --button-large-font-size: 14px;
-  --button-large-padding-vertical: 6px;
-  --button-large-padding-horizontal: 14px;
+  --button-large-font-size: 16px;
+  --button-large-padding-vertical: 11px;
+  --button-large-padding-horizontal: 19px;
 
   --button-small-font-size: 12px;
-  --button-small-padding-vertical: 5px;
+  --button-small-padding-vertical: 7px;
   --button-small-padding-horizontal: 9px;
 
   --button-mini-font-size: 12px;
-  --button-mini-padding-vertical: 2px;
+  --button-mini-padding-vertical: 4px;
   --button-mini-padding-horizontal: 4px;
 
   --button-default-color: var(--color-base-black);
-  --button-default-fill: var(--color-dark-light);
-  --button-default-border: var(--border-color-light);
+  --button-default-fill: var(--color-white);
+  --button-default-border: #c4c4c4;
 
   --button-ghost-color: #666;
   --button-ghost-fill: transparent;
   --button-ghost-border: none;
 
-  --button-disabled-color: var(--color-base-black);
-  --button-disabled-fill: var(--color-dark-light);
-  --button-disabled-border: var(--border-color-light);
+  --button-disabled-color: var(--color-extra-light-silver);
+  --button-disabled-fill: var(--color-extra-light-gray);
+  --button-disabled-border: var(--disabled-border-base);
 
   --button-primary-border: var(--color-primary);
   --button-primary-color: var(--color-white);

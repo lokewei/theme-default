@@ -7,7 +7,7 @@
     display: inline-block;
     line-height: 1;
     white-space: nowrap;
-    cursor: pointer;
+    cursor: default;
     background: var(--button-default-fill);
     border: var(--border-base);
     border-color: var(--button-default-border);
@@ -21,19 +21,19 @@
     & + .el-button {
       margin-left: 10px;
     }
-    
+
     @mixin button-size var(--button-padding-vertical), var(--button-padding-horizontal), var(--button-font-size), var(--button-border-radius);
 
     &:hover,
     &:focus {
-      color: var(--color-primary);
-      border-color: @color;
+      color: var(--color-white);
+      background-color: var(--color-hover-fill);
     }
-    
+
     &:active {
-      color: shade(var(--color-primary), var(--button-active-shade-percent));
-      border-color: @color;
+      color: var(--color-white);
       outline: none;
+      background-color: var(--button-default-fill);
     }
 
     &::-moz-focus-inner {
@@ -47,18 +47,16 @@
     }
 
     @when plain {
+      background-color: transparent;
       &:hover,
       &:focus {
-        background: var(--color-white);
-        border-color: var(--color-primary);
-        color: var(--color-primary);
+        color: var(--color-white);
+        border-color: var(--color-dark-extra-light);
       }
       
       &:active {
-        background: var(--color-white);
-        border-color: shade(var(--color-primary), var(--button-active-shade-percent));
-        color: shade(var(--color-primary), var(--button-active-shade-percent));
-        outline: none;
+        color: var(--color-base-black);
+        border-color: var(--button-default-border);
       }
     }
 
@@ -71,24 +69,28 @@
       &,
       &:hover,
       &:focus {
+        opacity: 0.5;
         color: var(--button-disabled-color);
         cursor: not-allowed;
         background-image: none;
-        background-color: var(--button-disabled-fill);
         border-color: var(--button-disabled-border);
       }
 
       &.el-button--text {
-        background-color: transparent;
+        color: var(--color-primary);
+      }
+
+      &.el-button--primary {
+        color: var(--button-primary-color);
+        background-color: var(--button-primary-fill);
       }
 
       &.is-plain {
         &,
         &:hover,
         &:focus {
-          background-color: var(--color-white);
-          border-color: var(--color-base-gray);
-          color: var(--color-extra-light-silver);
+          background-color: transparent;
+          color: var(--button-disabled-color);
         }
       }
     }
@@ -143,9 +145,11 @@
       &:hover,
       &:focus {
         color: tint(var(--color-primary), var(--button-hover-tint-percent));
+        background: transparent;
       }
       &:active {
         color: shade(var(--color-primary), var(--button-active-shade-percent));
+        background: transparent;
       }
     }
   }

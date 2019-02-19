@@ -31,11 +31,13 @@
 
       &:hover {
         border-color: var(--input-hover-border);
+        background-color: var(--input-focus-fill);
       }
 
       &:focus {
         outline: none;
         border-color: var(--input-focus-border);
+        background-color: var(--input-focus-fill);
       }
     }
 
@@ -77,11 +79,13 @@
       .el-input__inner {
         outline: none;
         border-color: var(--input-focus-border);
+        background-color: var(--input-focus-fill);
       }
     }
 
     @when disabled {
       .el-input__inner {
+        opacity: 0.4;
         background-color: var(--input-disabled-fill);
         border-color: var(--input-disabled-border);
         color: var(--input-disabled-color);
@@ -126,8 +130,8 @@
       display: table-cell;
     }
     @e append, prepend {
-      background-color: var(--color-dark-white);
-      color: var(--color-light-silver);
+      background-color: var(--color-dark-light);
+      color: var(--color-base-black);
       vertical-align: middle;
       display: table-cell;
       position: relative;
@@ -208,16 +212,19 @@
 
       &:hover {
         border-color: var(--input-hover-border);
+        background-color: var(--input-focus-fill);
       }
 
       &:focus {
         outline: none;
         border-color: var(--input-focus-border);
+        background-color: var(--input-focus-fill);
       }
     }
 
     @when disabled {
       .el-textarea__inner {
+        opacity: 0.4;
         background-color: var(--input-disabled-fill);
         border-color: var(--input-disabled-border);
         color: var(--input-disabled-color);

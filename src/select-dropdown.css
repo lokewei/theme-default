@@ -11,7 +11,7 @@
     background-color: var(--select-dropdown-background);
     box-shadow: var(--select-dropdown-shadow);
     box-sizing: border-box;
-    margin: 5px 0;
+    /* margin: 5px 0; */
 
     @when multiple {
       & .el-select-dropdown__item.selected {
